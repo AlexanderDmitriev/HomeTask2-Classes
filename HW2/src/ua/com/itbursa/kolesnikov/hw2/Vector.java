@@ -9,9 +9,10 @@ public class Vector {
 	}
 	
 	public void clear() {
+		if (objects.length!=0){
 		for (int i=0; i<objects.length; i++){
-			objects[i]=null;	
-		}
+			objects[i]="none";	
+		}} 
 	}
 	
 	public void add(Object element) {
@@ -34,7 +35,7 @@ public class Vector {
 			link3[i]=objects[i]; }
 		for (int i=index+1; i<objects.length; i++){
 			link3[i]=objects[i+1]; }
-		size=size+1;
+		size=size-1;
 		for (int i=0; i<link3.length; i++){
 			objects[i]=link3[i]; }
 	}
@@ -42,12 +43,7 @@ public class Vector {
 	public String toString() {
 		for (int i=0; i<objects.length; i++){
 			System.out.print(objects[i]);}
-		return super.toString();}
+		return super.toString();
+		}
 	////////////////////////////////////////////////////////////
-	public void main(String[] args){
-	  Vector link=new Vector(Integer.parseInt(JOptionPane.showInputDialog("¬ведите размерность массива ")));
-      link.clear();
-      link.add("cbhbvjdbjv");
-      Object x=link.get(3);
-      link.remove(4);
-}}
+	}
